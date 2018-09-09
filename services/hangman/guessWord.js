@@ -1,7 +1,7 @@
 module.exports = async function guessWord (msg, word) {
   let gameKey = `hangman:${msg.channel.id}:${msg.author.id}`
   let game = await this.data.hgetallAsync(gameKey)
-  if (!game) return
+  if (!game || !word) return
   let guesses = await this.data.smembersAsync(`${gameKey}:guesses`)
   game.wrong = +game.wrong
   console.log(game.word, word)
