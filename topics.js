@@ -1,0 +1,46 @@
+module.exports = {
+  animals: [
+    'elephant', 'monkey', 'raccoon', 'cobra',
+    'iguana', 'dolphin', 'ocelot', 'gazelle',
+    'bumble bee', 'orca whale', 'alligator',
+    'electric eel', 'king cobra', 'red panda',
+    'mountain goat', 'squirrel', 'wildebeest',
+    'jaguar', 'snow leopard', 'pufferfish',
+    'hippopotamus', 'komodo dragon', 'rhinoceros',
+    'polar bear', 'siberian tiger',
+  ],
+  countries: [
+    'united states', 'england', 'australia',
+    'india', 'china', 'japan', 'thailand',
+    'nigeria', 'south africa', 'argentina',
+    'united arab emirates', 'canada', 'mexico',
+    'france', 'germany', 'portugal', 'spain',
+    'saudi arabia', 'republic of congo', 'chile',
+    'new zealand', 'south africa', 'south korea',
+    'dominican republic',
+  ],
+  'bodies of water': [
+    'atlantic ocean', 'pacific ocean', 'indian ocean',
+    'arctic ocean', 'southern ocean', 'caspian sea',
+    'mediterranean sea', 'black sea', 'persian gulf',
+    'red sea', 'adriatic sea', 'mississippi river',
+    'nile river', 'yangtze river', 'yellow river',
+    'amazon river', 'congo river',
+  ],
+  colors: [
+    'red', 'orange', 'yellow', 'green', 'blue', 'purple',
+    'cyan', 'magenta', 'black', 'white', 'amethyst', 'lime',
+    'cerulean', 'scarlet', 'pink', 'canary', 'dandelion',
+    'marigold', 'brown', 'forest green', 'pacific blue',
+    'navy blue', 'indigo', 'violet', 'fuchisia', 'melon', 
+  ],
+  fruits: [
+    'kiwi', 'starfruit', 'pineapple', 'banana', 'pear',
+    'apple', 'watermelon', 'tomato', 'mango', 'cantaloupe',
+    'tangerine', 'coconut', 'peach', 'cherry', 'plum',
+    'apricot', 'grape', 'lemon', 'lime', 'pomegranate',
+    'blueberry', 'blackberry', 'raspberry', 'strawberry',
+    'orange', 'clementine', 'dragonfruit', 'grapefruit',
+    'cranberry', 'papaya', 'durian', 'guava', 'kumquat',
+  ]
+}

@@ -1,0 +1,13 @@
+# Environment Variables
+.env
+
+# Node Modules
+node_modules
+
+# IDE
+.vs
+.vscode
+
+# Database Dump
+dump.rdb
+temp*.rdb

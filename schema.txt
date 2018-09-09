@@ -1,0 +1,26 @@
+## Game
+Type: Hash
+Key: hangman:{channel}:{user}
+Data:
+- topic
+- word
+- state: word but unfound letters are underscores
+- wrong: amount of incorrect guesses
+- image: link to vgyme image of current game state
+- message: id of current game message
+- theme: theme to draw the game in
+
+## Game Guesses
+Type: Set
+Key: hangman:{channel}:{user}:guesses
+Data: letters that have been guessed
+
+## Themes
+Type: Hash
+Key: themes
+Data: user id -> theme name
+
+## Menus
+Type: String
+Key: menus:{channel}
+Data: user id -> current open menu
