@@ -24,9 +24,9 @@ module.exports = async function startGame (msg) {
   await multi.execAsync()
   let guesses = await this.data.smembersAsync(`${gameKey}:guesses`)
   let image = this.canvas.drawGame(game, guesses)
-  let vgyme = await this.vgyme.postImage(image)
-  await this.data.hsetAsync(gameKey, 'image', vgyme.image)
-  msg.channel.createMessage(vgyme.image).then(async gameMsg => {
+  let pomf = await this.pomf.postImage(image)
+  await this.data.hsetAsync(gameKey, 'image', pomf.image)
+  msg.channel.createMessage(pomf.image).then(async gameMsg => {
     await this.data.hsetAsync(gameKey, 'message', gameMsg.id)
   }).catch(() => {})
 }

@@ -45,11 +45,11 @@ module.exports = async function guessLetter (msg, letter) {
     await this.data.saddAsync(`${gameKey}:guesses`, letter)
   }
   let image = this.canvas.drawGame(game, guesses)
-  let vgyme = await this.vgyme.postImage(image)
+  let pomf = await this.pomf.postImage(image)
   if (!gameFinished)
-    await this.data.hsetAsync(gameKey, 'image', vgyme.image)
-  this.client.editMessage(msg.channel.id, game.message, vgyme.image).catch(() => {
-    msg.channel.createMessage(vgyme.image).then(gameMsg => {
+    await this.data.hsetAsync(gameKey, 'image', pomf.image)
+  this.client.editMessage(msg.channel.id, game.message, pomf.image).catch(() => {
+    msg.channel.createMessage(pomf.image).then(gameMsg => {
       if (!gameFinished)
         this.data.hset(gameKey, 'message', gameMsg.id)
     }).catch(() => {})

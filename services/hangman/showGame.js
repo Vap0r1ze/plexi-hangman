@@ -6,19 +6,19 @@ module.exports = async function showGame (msg) {
   let guesses = await this.data.smembersAsync(`${gameKey}:guesses`)
   this.client.editMessage(msg.channel.id, game.message, `<${game.image}>`).catch(() => {})
   await msg.channel.sendTyping()
-  let vgyme = game
+  let pomf = game
   let theme = await this.getTheme(msg)
   if (process.env.ENV === 'dev' || game.theme !== theme) {
     game.wrong = +game.wrong
     game.theme = theme
     let image = this.canvas.drawGame(game, guesses)
-    vgyme = await this.vgyme.postImage(image)
+    pomf = await this.pomf.postImage(image)
     let multi = this.data.multi()
-    .hset(gameKey, 'image', vgyme.image)
+    .hset(gameKey, 'image', pomf.image)
     .hset(gameKey, 'theme', theme)
     await multi.execAsync()
   }
-  msg.channel.createMessage(vgyme.image).then(async gameMsg => {
+  msg.channel.createMessage(pomf.image).then(async gameMsg => {
     await this.data.hsetAsync(gameKey, 'message', gameMsg.id)
   }).catch(() => {})
 }
