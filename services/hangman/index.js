@@ -11,7 +11,7 @@ const helpMessage = [
   '__Hangman__',
   `**Start a game** \`${prefix}start\``,
   `**Quit a game** \`${prefix}quit\``,
-  `**Open theme menu** \`${prefix}theme [theme]\``,
+  `**Select theme** \`${prefix}theme [theme]\``,
   `**Repost the game display** \`${prefix}show\``,
   `**Guess the word** \`${prefix}guess <word>\``,
   `\n**To guess a letter, use** \`${prefix}\` **followed by that letter**`
