@@ -4,7 +4,6 @@ module.exports = async function guessWord (msg, word) {
   if (!(game && game.topic) || !word) return
   let guesses = await this.data.smembersAsync(`${gameKey}:guesses`)
   game.wrong = +game.wrong
-  console.log(game.word, word)
   if (game.word === word) {
     this.reply(msg, 'correct, you\'ve won!!')
     game.state = word
