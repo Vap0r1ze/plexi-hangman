@@ -10,10 +10,10 @@ const data = require('./services/redis')(() => {
   client.connect()
 })
 const logger = new Logger('BOT')
-const pomf = require('./services/pomf')
+const vgyme = require('./services/vgyme')
 const canvas = require('./services/canvas')
 
-const ctx = { ...utils, client, data, logger, pomf, canvas }
+const ctx = { ...utils, client, data, logger, vgyme, canvas }
 const hangman = require('./services/hangman').bind(ctx)
 const menus = require('./services/menus')
 

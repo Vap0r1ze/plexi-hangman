@@ -1,7 +1,7 @@
 module.exports = async function guessLetter (msg, letter) {
   let gameKey = `hangman:${msg.channel.id}:${msg.author.id}`
   let game = await this.data.hgetallAsync(gameKey)
-  if (!game) return
+  if (!(game && game.topic)) return
   let guesses = await this.data.smembersAsync(`${gameKey}:guesses`)
   msg.delete().catch(() => {})
   game.wrong = +game.wrong
@@ -45,11 +45,11 @@ module.exports = async function guessLetter (msg, letter) {
     await this.data.saddAsync(`${gameKey}:guesses`, letter)
   }
   let image = this.canvas.drawGame(game, guesses)
-  let pomf = await this.pomf.postImage(image)
+  let vgyme = await this.vgyme.postImage(image)
   if (!gameFinished)
-    await this.data.hsetAsync(gameKey, 'image', pomf.image)
-  this.client.editMessage(msg.channel.id, game.message, pomf.image).catch(() => {
-    msg.channel.createMessage(pomf.image).then(gameMsg => {
+    await this.data.hsetAsync(gameKey, 'image', vgyme.image)
+  this.client.editMessage(msg.channel.id, game.message, vgyme.image).catch(() => {
+    msg.channel.createMessage(vgyme.image).then(gameMsg => {
       if (!gameFinished)
         this.data.hset(gameKey, 'message', gameMsg.id)
     }).catch(() => {})

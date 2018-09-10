@@ -2,8 +2,8 @@ const topics = require('../../topics')
 
 module.exports = async function startGame (msg) {
   let gameKey = `hangman:${msg.channel.id}:${msg.author.id}`
-  let isGame = await this.data.existsAsync(gameKey)
-  if (isGame)
+  let oldGame = await this.data.hgetallAsync(gameKey)
+  if (oldGame && oldGame.topic)
     return this.reply(msg, 'you\'re already in a game!')
   await msg.channel.sendTyping()
   let topic = this.sample(Object.keys(topics))
@@ -24,9 +24,9 @@ module.exports = async function startGame (msg) {
   await multi.execAsync()
   let guesses = await this.data.smembersAsync(`${gameKey}:guesses`)
   let image = this.canvas.drawGame(game, guesses)
-  let pomf = await this.pomf.postImage(image)
-  await this.data.hsetAsync(gameKey, 'image', pomf.image)
-  msg.channel.createMessage(pomf.image).then(async gameMsg => {
+  let vgyme = await this.vgyme.postImage(image)
+  await this.data.hsetAsync(gameKey, 'image', vgyme.image)
+  msg.channel.createMessage(vgyme.image).then(async gameMsg => {
     await this.data.hsetAsync(gameKey, 'message', gameMsg.id)
   }).catch(() => {})
 }

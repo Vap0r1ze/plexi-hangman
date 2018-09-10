@@ -6,7 +6,7 @@ Data:
 - word
 - state: word but unfound letters are underscores
 - wrong: amount of incorrect guesses
-- image: link to pomf image of current game state
+- image: link to vgyme image of current game state
 - message: id of current game message
 - theme: theme to draw the game in
 
