@@ -3,6 +3,7 @@
 
 # Node Modules
 node_modules
+package-lock.json
 
 # IDE
 .vs
